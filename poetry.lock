@@ -69,27 +69,15 @@ django = ">=2.2,<5.0"
 docs = ["m2r2 (>=0.2.5,<0.3.0)", "sphinx (>=4.4,<5.0)", "sphinx_rtd_theme (>=1.0,<2.0)"]
 
 [[package]]
-name = "django-browser-reload"
-version = "1.7.0"
-description = "Automatically reload your browser in development."
+name = "fuzzywuzzy"
+version = "0.18.0"
+description = "Fuzzy string matching in python"
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = "*"
 
-[package.dependencies]
-Django = ">=3.2"
-
-[[package]]
-name = "django-tailwind"
-version = "3.5.0"
-description = "Tailwind CSS Framework for Django projects"
-category = "main"
-optional = false
-python-versions = ">=3.8.1,<4.0.0"
-
-[package.dependencies]
-django = ">=3.2.14"
-django-browser-reload = ">=1.6.0,<2.0.0"
+[package.extras]
+speedup = ["python-levenshtein (>=0.12)"]
 
 [[package]]
 name = "soupsieve"
@@ -118,7 +106,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8.1"
-content-hash = "078c418f3218417e807a68561ee2a59b48b4b49589fba6095c641a6aeeba3cb5"
+content-hash = "c1f382d99aa59a6abf989b16dbed7a7aa7fd3d203882ec053c3233e9eb232c7d"
 
 [metadata.files]
 asgiref = [
@@ -155,13 +143,9 @@ django-bootstrap-v5 = [
     {file = "django-bootstrap-v5-1.0.11.tar.gz", hash = "sha256:2d431308859ce3cab7729bb09c76039059cd5fbdd34484da82c4c7f8d49da3a2"},
     {file = "django_bootstrap_v5-1.0.11-py3-none-any.whl", hash = "sha256:a207aa804938164c8450bbbef4faaba6d2093b3236000557a50f3bd44b53d268"},
 ]
-django-browser-reload = [
-    {file = "django_browser_reload-1.7.0-py3-none-any.whl", hash = "sha256:0d7cc4308ebbdf9b5637e28ee7b41ae28d4fcdf350d55ce007515b44cd10291b"},
-    {file = "django_browser_reload-1.7.0.tar.gz", hash = "sha256:712d0a4d6caa6833c8c205d4ce177b474feb45583cd6ee684c9ea7b71dd921b6"},
-]
-django-tailwind = [
-    {file = "django_tailwind-3.5.0-py3-none-any.whl", hash = "sha256:dcc3b29463fff48a0e8ccd15c87fd467f0e746a7987bde0fdde6253dbb7861be"},
-    {file = "django_tailwind-3.5.0.tar.gz", hash = "sha256:c089b05b47d0e9d19567a81a74949fde16cbbfd8e4264c1f8eb4216a644065b2"},
+fuzzywuzzy = [
+    {file = "fuzzywuzzy-0.18.0-py2.py3-none-any.whl", hash = "sha256:928244b28db720d1e0ee7587acf660ea49d7e4c632569cad4f1cd7e68a5f0993"},
+    {file = "fuzzywuzzy-0.18.0.tar.gz", hash = "sha256:45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8"},
 ]
 soupsieve = [
     {file = "soupsieve-2.4-py3-none-any.whl", hash = "sha256:49e5368c2cda80ee7e84da9dbe3e110b70a4575f196efb74e51b94549d921955"},

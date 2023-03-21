@@ -1,11 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import FormView, ListView, DetailView, TemplateView
 from django.urls import reverse_lazy
-# Create your views here.
-from django.http import HttpResponse
+
 from .models import Riddle
 from .forms import NewRiddleForm, GuessRiddleForm
+
+#### class based views
 
 class IndexView(TemplateView):
     template_name = "index.html"
@@ -32,6 +33,9 @@ class RiddleDetailView(DetailView):
     model = Riddle
     template_name = "riddle_detail.html"
 
+
+#### function based views
+
 def riddle_like(request, pk):
     riddle = Riddle.objects.get(id=pk)
     riddle.increase_likes()
@@ -46,6 +50,7 @@ def guess_riddle(request,pk):
 
         context = {
             'riddle': riddle,
+            'has_message': True,
             'message': '',
             'pk': riddle.id
             }
@@ -53,11 +58,10 @@ def guess_riddle(request,pk):
         form = GuessRiddleForm(request.POST)
         if form.is_valid():
             form_cleaned= form.cleaned_data
-            
-            if form_cleaned['guess'] == riddle.answer:
-                context['message'] = 'Correct'
-            else:
-                context['message'] = 'False'
+
+            print(riddle.check_guess(form_cleaned['guess']))
+                  
+            context['message'] = riddle.check_guess(form_cleaned['guess'])
 
             return render(request, 'riddle_guess.html', context)
             return HttpResponseRedirect(reverse_lazy('riddle-guess', kwargs=context))

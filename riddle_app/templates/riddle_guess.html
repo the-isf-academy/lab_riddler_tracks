@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Random Riddle</h1>
+    <h1>Guess Riddle</h1>
 
     <p><b>Question: </b>{{ riddle }}</p>
 
-    {% if message %}    
+    {% if has_message %}    
         <p><b>Correct: </b>{{message}}</p>
 
         <button class="btn shadow-none"><a href="{% url 'riddle-guess' pk=riddle.id %}">Guess Again</a></button>
