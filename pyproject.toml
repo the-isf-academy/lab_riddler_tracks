@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "riddle-site"
+version = "0.1.0"
+description = ""
+authors = ["emma <eqbrown@isf.edu.hk>"]
+readme = "README.md"
+packages = [{include = "riddle_site"}]
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+Django = "^4.1.7"
+django-bootstrap-v5 = "^1.0.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
