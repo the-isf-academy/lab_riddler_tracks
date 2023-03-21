@@ -3,12 +3,14 @@
 {% block content %}
     <h1>Guess Riddle</h1>
 
-    <p><b>Question: </b>{{ riddle }}</p>
+    <p>Question: {{ riddle }}</p>
 
     {% if has_message %}    
-        <p><b>Correct: </b>{{message}}</p>
+        <p>Correct: {{message}}</p>
 
-        <button class="btn shadow-none"><a href="{% url 'riddle-guess' pk=riddle.id %}">Guess Again</a></button>
+        <button><a href="{% url 'riddle-guess' pk=riddle.id %}">Guess Again</a></button>
+
+        <!-- 💻 If the guess was correct, add the like button -->
 
 
     {% else %}
@@ -41,7 +43,7 @@
         {% endfor %}
        
         <div class="form-buttons">
-            <input type="submit" value="Guess" class="btn"/>
+            <input type="submit" value="Guess" />
         </div>
        
         </form>

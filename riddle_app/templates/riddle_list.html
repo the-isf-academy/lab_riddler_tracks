@@ -3,11 +3,11 @@
 {% block content %}
     <h1>All Riddles</h1>
 
-    <ul class="list">
+    <ul>
     {% for riddle in object_list %}
     
 
-    <a href="{% url 'riddle-detail' pk=riddle.id %}"><li class="m-2">{{riddle}}</li></a>
+    <li><a href="{% url 'riddle-detail' pk=riddle.id %}">{{riddle}}</a></li>
 
     {% endfor %}
     </ul>

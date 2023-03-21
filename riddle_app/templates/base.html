@@ -4,7 +4,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>ISF Riddler</title>
 
     <!-- Bootstrap 5 -->
     {% load bootstrap5 %}
@@ -14,28 +14,24 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type ="text/css" href="{% static 'style.css' %}">
     
-    <!-- <link rel="icon" href="{% static "color_app/favicon.png" %}"> -->
-
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
-    <div class="col-2">
+      <div class="col-2">
+        {% include 'navigation.html' %}
+        </div>
+      <div class="col">
 
-      {% include 'navigation.html' %}
+        {% block content %}
+        {% endblock %}
 
-  
       </div>
-    <div class="col">
-
-    {% block content %}
-    {% endblock %}
-
     </div>
   </div>
-</div>
-  </body>
-  </html>
+
+</body>
+</html>
 

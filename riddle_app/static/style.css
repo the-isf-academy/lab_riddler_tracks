@@ -1,119 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Zilla+Slab:wght@400;600&display=swap');
 
+
+/* 
+💻 assign variables for easy color theming 
+    - to use the variable as a value: var(--color1)
+*/
 :root {
-    --color1: rgb(105, 80, 65);
-    --color2: rgb(165, 121, 94);
-    --color3: rgb(249, 240, 231);
+    --color1: rgb(30, 30, 92);
+    --color2: rgb(241, 195, 215);
+    --color3: rgb(255, 253, 251);
+    --primary-font: 'Open Sans', sans-serif;
+    --secondary-font: 'Zilla Slab', sans;
 
 }
+
+/* 
+💻 Customize and add CSS! 
+    - Be sure to look at Bootstrap documentation. 
+    - Add specific bootstrap classes to existing HTML tags 
+*/
   
+body{
+    background-color: var(--color3);
+    font-family: var(--primary-font);
+}
 
 p{
     font-size: 2em;
     font-weight: 300;
-    color: var(--color1)
+    color: var(--color1);
+    font-family: var(--primary-font)
 }
 
 h1{
-    font-family: 'Zilla Slab';
-    font-weight: 600;
-    font-size: 4em;
-    line-height: 1.5em;
-    display: inline;
-    background: var(--color1);
-    color: #ffffff;
-
-}
-
-body{
-    background-color: var(--color3);
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.navigation{
-    margin-top: 100px;
-}
-
-.navigation a{
-    text-decoration: none;
-    font-size: 1.2em;
-    color: var(--color1);
-}
-
-.navigation a:hover{
-    color: var(--color2);
-}
-
-.navigation li{
-    margin-bottom: 10px;
-    list-style: none;
-}
-
-.list{
-    font-size: 1.5em;
-    font-weight: 300;
-}
-
-.btn{
-    background-color:var(--color2);
-    color: var(--color3);
-    display: inline;
-}
-
-.btn a, .btn a:hover{
-    text-decoration: none;
-    color: var(--color3);
-}
-
-.btn:hover{
-    background-color:var(--color1);
-    color: var(--color1);
-}
-
-input, select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-}
-
-a{
-    color: var(--color1);
-}
-
-a:hover{
-    color:var(--color2);
+    font-family: var(--secondary-font);
 }
 
 
-/* for mobile */
+
+
+/* 
+💻 experiment with changing your layout for mobile
+    - add custom styles for different screen sizes 
+*/
 
 
  @media (max-width: 769px) { 
-    .container, .row{
+
+    .row{
         display: inline-block;
-        width: 100%;
-    }
-
-    
-
-    .navigation{
-        margin-top: 10px;
-    }
-
-
-    .navigation li a{
-        display: block;
-
     }
 
     body{
         margin-top: 0px;
-        margin-left: 50px;
-        width: 100%
-        /* margin-right: 50px; */
+        width: 100%;
     }
  }
 

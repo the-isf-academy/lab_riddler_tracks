@@ -5,24 +5,19 @@
 
 
     <p><b>Question:</b> {{ riddle.question }}</p>
-    <p><b>Difficulty:</b> {{ riddle.get_difficulty_display }}</p>
+    <p>Likes:{{ riddle.likes }}</p>
 
-    <p><b>Likes:</b> {{ riddle.likes }}</p>
+    <!-- 💻 Add the Difficulty for the specific riddle -->
 
-   <div class="container">
-    <div class="row justify-content-start">
-        <div class="col-1 pl-0">
-            <button class="btn shadow-none"><a href="{% url 'riddle-guess' pk=riddle.id %}">Guess</a></button>
+   <a href="{% url 'riddle-guess' pk=riddle.id %}">Guess</a>
             
-        </div>
-        <div class="col-1">
-        <form action="{% url 'riddle-like' object.id %}" method="POST">
+
+
+    <form action="{% url 'riddle-like' object.id %}" method="POST">
             {% csrf_token %}
-            <button type="submit" name="riddle-id" value="{{object.id}}" class="btn shadow-none">Like</button>
+            <button type="submit" name="riddle-id" value="{{object.id}}" >Like</button>
         </form>
-    </div>
-    </div>
-   </div>
+
 
 
    
