@@ -7,14 +7,23 @@
     <p><b>Question:</b> {{ riddle.question }}</p>
     <p><b>Likes:</b> {{ riddle.likes }}</p>
 
+   <div class="container">
+    <div class="row justify-content-start">
+        <div class="col-1 pl-0">
+            <button class="btn shadow-none"><a href="{% url 'riddle-guess' pk=riddle.id %}">Guess</a></button>
+            
+        </div>
+        <div class="col-1">
+        <form action="{% url 'riddle-like' object.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" name="riddle-id" value="{{object.id}}" class="btn shadow-none">Like</button>
+        </form>
+    </div>
+    </div>
+   </div>
+
+
    
-    <a href="{% url 'riddle-guess' pk=riddle.id %}"><button class="btn btn-info">Guess</button></a>
-
-
-    <form action="{% url 'riddle-like' object.id %}" method="POST">
-        {% csrf_token %}
-        <button type="submit" name="riddle-id" value="{{object.id}}" class="btn btn-info">Like</button>
-    </form>
    
 
 {% endblock %}
